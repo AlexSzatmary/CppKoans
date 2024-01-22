@@ -94,7 +94,7 @@ void Koan05_pointers::they_can_do_arithmetic_with_integers_only() {
   int *ap = a;
 
   // Do the necessary pointer arithmetic with ap
-  ASSERT_EQUAL(&a[5], THIS_IS_NOT_NULL);
+  ASSERT_EQUAL(a[5], THIS_IS_NOT_NULL);
   // What is the value pointed to by ap before
   // and after the arithmetic?
   ASSERT_EQUAL(*ap, FILL_THE_NUMBER_IN);
@@ -104,11 +104,12 @@ void Koan05_pointers::they_can_do_arithmetic_with_integers_only() {
   ASSERT_EQUAL(*ap, FILL_THE_NUMBER_IN);
 }
 
-void Koan05_pointers::they_can_be_initialized_to_dynamic_memory() {
-  char *p = 0;
-  p = (char *)malloc(5 * sizeof(char));
-  ASSERT_EQUAL(p, THIS_IS_NOT_NULL);
-}
+// Commented out because you cannot predict the location of p
+// void Koan05_pointers::they_can_be_initialized_to_dynamic_memory() {
+//   char *p = 0;
+//   p = (char *)malloc(5 * sizeof(char));
+//   ASSERT_EQUAL(p, THIS_IS_NOT_NULL);
+// }
 
 void Koan05_pointers::they_can_be_used_to_access_dynamic_memory() {
   char *p = 0;
@@ -132,6 +133,8 @@ void Koan05_pointers::they_are_required_if_you_want_to_write_swap() {
   ASSERT_EQUAL(b, FILL_THE_NUMBER_IN);
 }
 
+// Functions g and fg are used in the following code. If you're confused, you can
+// uncomment the printf commands.
 void g(int x, int *y) {
   printf("In g, x = %d, *y = %d\n", x, *y);
   x++;
@@ -140,18 +143,18 @@ void g(int x, int *y) {
 }
 
 void fg(int *a, int b) {
-  printf("In fg, *a = %d, b = %d\n", *a, b);
+//   printf("In fg, *a = %d, b = %d\n", *a, b);
   *a += b;
   b *= 2;
   g(*a, &b);
-  printf("Back in fg, *a = %d, b = %d\n", *a, b);
+//  printf("Back in fg, *a = %d, b = %d\n", *a, b);
 }
 
 void Koan05_pointers::they_are_used_as_function_arguments_parameters() {
   int x = 3;
   int y = 4;
   fg(&x, y);
-  printf("In main: x = %d, y = %d\n", x, y);
+//   printf("In main: x = %d, y = %d\n", x, y);
 
   ASSERT_EQUAL(x, FILL_THE_NUMBER_IN);
   ASSERT_EQUAL(y, FILL_THE_NUMBER_IN);

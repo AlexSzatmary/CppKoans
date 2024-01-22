@@ -64,14 +64,14 @@ int main()
   status.start();
 
   // The Path of Enlightment
-  koan05.run();
-  koan06.run();
   koan00.run();
   koan01.run();
   koan02.run();
   koan03.run();
   koan04.run();
-//   koanXX.run();
+  koan05.run();
+  koan06.run();
+  //   koanXX.run();
 
   // Done.
   status.end();

@@ -52,9 +52,7 @@ void Koan06_files::they_can_be_used_to_store_information() {
   fclose(fp);
   //------------------
 
-  // Is 'filesize' the same as size of marks database?
-  ASSERT_EQUAL(filesize, FILL_THE_NUMBER_IN);
-  // And what is the actual size of the file?
+  // Why isn't 'filesize' the same as size of marks database?
   ASSERT_EQUAL(filesize, FILL_THE_NUMBER_IN);
 }
 
