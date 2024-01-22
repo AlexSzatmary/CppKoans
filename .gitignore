@@ -13,3 +13,7 @@ build/
 *.lai
 *.la
 *.a
+
+# local junk
+.DS_Store
+settings.json
